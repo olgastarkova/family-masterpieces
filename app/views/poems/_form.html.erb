@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+			<%= simple_form_for @poem do |f| %>
+				<%= f.input :title, placeholder: "Чудосрунт" %>
+				<%= f.input :content %>
+				<%= f.input :year, as: :string, input_html: {id: "poem_created"} %>
+				<%= f.input :dedicated_to, collection: Poem::PEOPLE, prompt: "Choose to whom the poem is dedicated" %>
+				<%= f.submit "Add to collection", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

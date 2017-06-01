@@ -1,0 +1,148 @@
+
+.container-search {
+	border-right: 1px solid #efefef;
+}
+
+// .container-items {
+// 	border-right: 1px solid #efefef;
+// }
+
+.to_whom ul {
+	padding-left: 0;
+	display: flex;
+}
+
+.to_whom li {
+	display: block;
+	display: inline-block;
+	padding: 4px;
+}
+
+
+li {
+	margin: 0;
+	list-style: none;
+}
+
+
+.years {
+	display: flex;
+	margin-right: 7px;
+	align-items: center;
+	flex-wrap: wrap;
+
+}
+
+.year {
+	text-align: center;
+	height: 30px;
+	padding: 3px 5px;
+	flex: 0 0 25%;
+	margin: 5px;
+	color: gray;
+	border: 1px solid gray;
+	background-color: white;
+	border-radius: 8px;
+}
+
+.year-active {
+	color: white;
+	border: 1px solid gray;
+	background-color: gray;
+}
+
+// TAB 2: List of poems
+
+.items-body {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 30px;
+	flex-wrap: wrap;
+}
+
+
+.poem-card {
+	height: 200px;
+	width: 200px;
+	opacity: 0.6;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around
+}
+
+.poem-card-year {
+	background-color: #62725F;
+	opacity: 0.9;
+	color: white;
+	border-radius: 3px;
+	border: 1px solid white;
+
+	h2 {
+		font-size: 28px;
+		margin-top: 3px;
+		margin-right: 7px;
+		margin-left: 7px;
+		margin-bottom: 3px;
+		opacity: 1.0;
+	}
+	p {
+		margin-top: 3px;
+		margin-right: 7px;
+		margin-left: 7px;
+		opacity: 1.0;
+	}
+}
+
+.poem-card-author {
+	position: absolute;
+}
+
+
+// TAB 3: Poem preview
+
+.poem-info {
+	position: relative;
+	height: 150px;
+	margin-top: 20px;
+}
+
+.poem-date {
+	position: absolute; 
+	left: 15px;
+	top: 10px;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.poem-author-pic {
+	position: absolute; 
+	right: 15px;
+	top: 10px;
+}
+
+
+.poem-description {
+	position: absolute;
+	bottom: 10px;
+	left: 15px;
+}
+
+.poem-description {
+	h2 {
+		font-size: 30px;
+		margin-top: 10px;
+		margin-bottom: 	10px;
+	}
+
+	p {
+		font-size: 13px;
+		margin-top: 3px;
+		margin-bottom: 0;
+	}
+}
+
+.poem-content {
+	padding: 30px 0 30px 20px;
+}

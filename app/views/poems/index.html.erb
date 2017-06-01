@@ -1,0 +1,103 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-3">
+			<div class="container-search">
+				<h1>Authors</h1>
+				<div class="users">
+					<ul>
+						<% @users.each do |user| %>
+							<li><input type="checkbox"> <%= user.nickname %><li>
+						<% end %>
+						</ul>
+				</div>
+
+
+				<h1>Dedicated to</h1>	
+				<div class="to_whom">
+					<ul>
+						<% @users.each do |user| %>
+							<% if user.photo %>
+								<li> <%= image_tag user.photo %> </li>	
+							<% else %>
+								<li> <%= image_tag 'http://placehold.it/30x30', class: "avatar-large" %> <li>
+							<% end %>
+						<% end %>
+					</ul>
+				</div>
+
+				<h1>Year</h1>	
+				<div class="years">
+					<span class="year">2004</span>
+					<span class="year">2005</span>
+					<span class="year">2006</span>
+					<span class="year">2007</span>
+					<span class="year">2008</span>
+					<span class="year">2009</span>
+					<span class="year">2010</span>
+					<span class="year">2011</span>
+					<span class="year">2012</span>
+					<span class="year">2013</span>
+					<span class="year">2014</span>
+					<span class="year">2015</span>
+					<span class="year">2016</span>
+					<span class="year">2017</span>
+				</div>
+
+
+				<h1>Audio - Video</h1>
+				<div class="search-container-audio-video">
+					<div class="onoffswitch">
+					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+					    <label class="onoffswitch-label" for="myonoffswitch"></label>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+
+<% link_to "index.html", class: "navbar-brand" do %>
+  <%= image_tag "logo.png", class: "img-circle" %>
+<% end %>
+
+
+
+		<div class="col-xs-12 col-md-8">
+			<div class="container-items">
+				<h1>Poems</h1>
+				<div class="items-body">
+					<% @poems.each do |poem| %>
+						<%= link_to poem_path(poem) do %>
+							<% if poem.cover%>
+								<div class="poem-card" style="background-image: url('<%= image_path poem.cover %>')">
+								</div>
+							<% else %>
+								<div class="poem-card" style="background-image: url('https://unsplash.it/200/200/?random')">
+									<div class="poem-card-year">
+										<% if poem.title%>
+											<h2 class="text-center"><%= poem.title %></h2>
+										<% end %>
+										<p> Автор: <%= poem.user.nickname %></p>
+										<% if poem.year %>
+											<p class="text-center"><%= poem.year.year %></p>
+										<% end %>
+									</div>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>			
+
+	</div>
+	<!-- end of row -->
+</div> 
+<!-- end of container -->
+
+
+
+
+
+
+
+
