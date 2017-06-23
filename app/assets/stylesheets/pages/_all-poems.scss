@@ -1,11 +1,5 @@
+// TAB 1 - SEARCH FILTERS
 
-.container-search {
-	border-right: 1px solid #efefef;
-}
-
-// .container-items {
-// 	border-right: 1px solid #efefef;
-// }
 
 .to_whom ul {
 	padding-left: 0;
@@ -51,7 +45,11 @@ li {
 	background-color: gray;
 }
 
-// TAB 2: List of poems
+// TAB 2: LIST OF POEMS
+
+.wrapper-dark-grey {
+	height:100vh;
+}
 
 .items-body {
 	display: flex;
@@ -99,7 +97,7 @@ li {
 }
 
 
-// TAB 3: Poem preview
+// TAB 3: Poem preview -- REMOVED
 
 .poem-info {
 	position: relative;

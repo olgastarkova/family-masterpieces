@@ -2,9 +2,10 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,700|Raleway:400,100,300,700,500|Allura|Great+Vibes|Homemade+Apple|Parisienne|Zeyada");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: 'Allura', cursive;
+@import url("https://fonts.googleapis.com/css?family=Bad+Script|Exo+2:100,300,700|Open+Sans:300,700&amp;subset=cyrillic,latin-ext");
+
+$base-font: 'Exo 2', sans-serif;
+$header-font: 'Bad Script', cursive;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -17,6 +18,7 @@ $header-font: 'Allura', cursive;
 // $my-font: "Font Name";
 
 // Font-size and line-height
+
 $base-size: 15px;
 $base-height: 1.4;
 
@@ -24,15 +26,21 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-$brand-color: #D23333;
+$brand-color: #ee6352;
 
 $red: #EE5F5B;
-$blue: #469AE0;
+$blue: #4f7cac;
 $yellow: #FDB631;
 $orange: #E67E22;
-$green: #32B796;
-$gray: #000000;
+$green: #57a773;
+$gray: #474350;
 
 
 
-// $header-font: "Raleway", "Helvetica", "sans-serif";
+
+// $red: #EE5F5B;
+// $blue: #469AE0;
+// $yellow: #FDB631;
+// $orange: #E67E22;
+// $green: #32B796;
+// $gray: #000000;

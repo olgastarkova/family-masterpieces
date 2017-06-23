@@ -1,5 +1,5 @@
 
-		<div class="col-xs-12 col-md-4 col-sm-offset-4">
+		<div class="col-xs-12 col-md-5 col-sm-offset-4">
 			<div class="container-preview">
 				<div class="poem-info">
 					<div class="poem-date">
@@ -8,7 +8,7 @@
 					<div class="poem-description">
 						<h2><%= @poem.title %></h2>
 						<p>Посвящается:</p>
-						<p><%= @poem.user.nickname %></p>
+						<p><%= @poem.dedicated_to %></p>
 					</div>
 					<div class="poem-author-pic">
 						<%= image_tag 'http://placehold.it/30x30', class: "avatar-large" %>
