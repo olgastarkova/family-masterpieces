@@ -21,7 +21,7 @@
     position: absolute; top: 0; bottom: 0;
     right: 37px;
     border: 2px solid #E3E3E3; border-radius: 32px;
-    transition: all 0.3s ease-in 0s; 
+    transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label {
     background-color: #3478C7;
@@ -30,7 +30,7 @@
    border-color: #3478C7;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    right: 0px; 
+    right: 0px;
 }
 
 
@@ -38,11 +38,11 @@
 .btn-home {
     text-align: center;
     height: 70px;
-    padding: 10px 40px;
+    padding: 18px 40px;
     margin: 5px;
     color: white;
     border: 1px solid white;
-    border-radius: 20px;
+    border-radius: 40px;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
