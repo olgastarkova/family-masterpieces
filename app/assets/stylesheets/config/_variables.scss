@@ -2,10 +2,11 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Bad+Script|Exo+2:100,300,700|Open+Sans:300,700&amp;subset=cyrillic,latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Bad+Script|Exo+2:200,300,400,700|Didact+Gothic|Open+Sans+Condensed:300,700&amp;subset=cyrillic");
 
+// $base-font: 'Didact Gothic', sans-serif;
 $base-font: 'Exo 2', sans-serif;
-$header-font: 'Bernadette Rough', 'Bad Script', cursive;
+$header-font: 'Open Sans Condensed', sans-serif;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -44,3 +45,5 @@ $gray: #474350;
 // $orange: #E67E22;
 // $green: #32B796;
 // $gray: #000000;
+
+$base-font: 'Exo 2', sans-serif;

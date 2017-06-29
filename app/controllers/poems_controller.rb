@@ -31,9 +31,12 @@ class PoemsController < ApplicationController
 	end
 
 	def update
+    @poem.update(poem_params)
 	end
 
 	def destroy
+    @poem.destroy
+    render 'dashboard'
 	end
 
 
@@ -45,7 +48,7 @@ class PoemsController < ApplicationController
 	end
 
 	def poem_params
-		params.require(:poem).permit(:title, :content, :year, :dedicated_to)
+		params.require(:poem).permit(:title, :content, :year, :dedicated_to, :cover, :cover_cache)
 	end
 
 end

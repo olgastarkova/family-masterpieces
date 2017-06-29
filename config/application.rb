@@ -1,4 +1,6 @@
 require_relative 'boot'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 
 require "rails"
 # Pick the frameworks you want:
@@ -10,6 +12,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -18,6 +21,7 @@ Bundler.require(*Rails.groups)
 
 module FamilyMasterpieces
   class Application < Rails::Application
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     config.generators do |generate|
       generate.assets false
     end
