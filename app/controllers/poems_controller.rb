@@ -1,5 +1,5 @@
 class PoemsController < ApplicationController
-	before_action :set_poem, only: [:show, :update, :destroy]
+	before_action :set_poem, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@poem = Poem.new
@@ -18,11 +18,12 @@ class PoemsController < ApplicationController
 
 	def new
 		@poem = Poem.new
+		@users = User.where(author: true)
 	end
 
 	def create
 		@poem = Poem.new(poem_params)
-		@poem.user = current_user
+		# @poem.user = current_user
 		if @poem.save
 			redirect_to poem_path(@poem)
 		else
@@ -31,6 +32,7 @@ class PoemsController < ApplicationController
 	end
 
 	def edit
+		@users = User.where(author: true)	
 	end
 
 	def update
@@ -59,7 +61,7 @@ class PoemsController < ApplicationController
 	end
 
 	def poem_params
-		params.require(:poem).permit(:title, :content, :year, :dedicated_to, :cover, :cover_cache)
+		params.require(:poem).permit(:title, :content, :user, :year, :dedicated_to, :cover, :cover_cache)
 	end
 
 end

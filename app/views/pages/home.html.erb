@@ -3,8 +3,8 @@
   <div class="banner-size banner-content">
     <h1>Starkovs Masterpieces</h1>
     <p>Нет, я не Байрон, я - Старков</p>
-    <a class="btn btn-lg red">Коллекция шедевров</a>
-    <a class="btn btn-lg brown">Добавить шедевр</a>
+    <%= link_to "Коллекция шедевров", poems_path, class: "btn btn-lg red" %>
+    <%= link_to "Добавить шедевр", new_poem_path, class: "btn btn-lg brown" %>
   </div>
 </div>
 
