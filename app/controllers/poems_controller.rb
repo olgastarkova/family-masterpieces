@@ -2,9 +2,12 @@ class PoemsController < ApplicationController
 	before_action :set_poem, only: [:show, :update, :destroy]
 
 	def index
+		@poem = Poem.new
 		@users = User.where(author: true)
 	  	if params[:query]
 	  		@poems = Poem.search_by_title_and_content(params[:query])
+	  	elsif params[:poem]
+	  		@poems = Poem.where(year: params[:poem])
 	  	else
 	  		@poems = Poem.all
 	  	end
@@ -31,13 +34,21 @@ class PoemsController < ApplicationController
 	end
 
 	def update
-    @poem.update(poem_params)
+    	@poem.update(poem_params)
 	end
 
 	def destroy
-    @poem.destroy
-    render 'dashboard'
+    	@poem.destroy
 	end
+
+
+
+	# def filter
+	# 	@poem = Poem.new
+	# 	@poems = Poem.where('extract(year from year) = ?', 2017)
+	# 	#@poems = Poem.where('extract(year from year) = ?', 2015)
+	# 	redirect_to poems_path
+	# end
 
 
 

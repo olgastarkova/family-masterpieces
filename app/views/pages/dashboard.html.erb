@@ -5,7 +5,7 @@
       <ul>
         <% @poems.each do |poem| %>
           <li data-poem-id="<%= poem.id %>">
-            <%= poem.title %> - <%= poem.user.nickname %> - <%= link_to "View", poem_path(poem), {class: "btn btn-primary"} %> - <%= link_to "Delete", poem_path(poem), method: :delete, data: { confirm: "Are you sure?", remote: true }%>
+            <%= poem.title %> - <%= poem.user.nickname %> - <%= link_to "View", poem_path(poem), {class: "btn btn-primary"} %> - <%= link_to "Delete", poem_path(poem), method: :delete, remote: true %>
           </li>
         <% end %>
       </ul>

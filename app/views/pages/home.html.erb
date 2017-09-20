@@ -1,17 +1,10 @@
-<div class="wrapper-home">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="welcome">
-					<p>Добро пожаловать на</p>
-					<h1>Starkovs' Masterpieces</h1>
-					<div class="cta">
-						<%= link_to poems_path do %>
-							<span class="btn-home btn">Коллекция шедевров</span>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="home-banner" style="background-image: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.4) 50%), url(<%= image_path 'boy-2.jpg'%>)">
+  <div class="banner-size opacity-layer"></div>
+  <div class="banner-size banner-content">
+    <h1>Starkovs Masterpieces</h1>
+    <p>Нет, я не Байрон, я - Старков</p>
+    <a class="btn btn-lg red">Коллекция шедевров</a>
+    <a class="btn btn-lg brown">Добавить шедевр</a>
+  </div>
 </div>
+

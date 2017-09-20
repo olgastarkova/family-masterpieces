@@ -1,0 +1,98 @@
+<div class="search_bar">
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-xs-12 col-md-3">
+  			<h3>Авторы</h3>
+  			<div class="users">
+  				<ul>
+  					<% @users.each do |user| %>
+  						<li><input type="checkbox"> <%= user.nickname %><li>
+  					<% end %>
+  					</ul>
+  			</div>
+
+
+  			<h3>Посвящается</h3>
+  			<div class="to_whom">
+  				<ul>
+  					<% @users.each do |user| %>
+  						<% if user.photo %>
+  							<li> <%= image_tag user.photo %> </li>
+  						<% else %>
+  							<li> <%= image_tag 'http://placehold.it/30x30', class: "avatar-large" %> <li>
+  						<% end %>
+  					<% end %>
+  				</ul>
+  			</div>
+
+  			<h3>Год</h3>
+  			<div class="years">
+  				<span class="year">2004</span>
+  				<span class="year">2005</span>
+  				<span class="year">2006</span>
+  				<span class="year">2007</span>
+  				<span class="year">2008</span>
+  				<span class="year">2009</span>
+  				<span class="year">2010</span>
+  				<span class="year">2011</span>
+  				<span class="year">2012</span>
+  				<span class="year">2013</span>
+  				<span class="year">2014</span>
+  				<span class="year">2015</span>
+  				<span class="year">2016</span>
+  				<span class="year">2017</span>
+  			</div>
+
+
+  			<h3>Аудио / Видео</h3>
+  			<div class="search-container-audio-video">
+  				<div class="onoffswitch">
+  				    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+  				    <label class="onoffswitch-label" for="myonoffswitch"></label>
+  				</div>
+  			</div>
+  		</div>
+
+
+  <% link_to "index.html", class: "navbar-brand" do %>
+    <%= image_tag "logo.png", class: "img-circle" %>
+  <% end %>
+
+
+
+  		<div class="col-xs-12 col-md-9">
+  			<h3>"Не дышите на шедевры..."</h3>
+  			<div class="poems-search-results">
+  				<% @poems.each do |poem| %>
+  					<%= link_to poem_path(poem) do %>
+  						<% if poem.cover%>
+  							<div class="poem-card" style="background-image: url('<%= cl_image_path poem.cover, height: 300, width: 300, crop: :fill %>')">
+                  <div class="poem-card-banner">
+                    <%= image_tag 'http://placehold.it/50x50', class: "avatar-large" %>
+                    <div class="poem-flex-text">
+                      <h3><%= poem.title %></h3>
+                      <p><%= poem.year.year %></p>
+                    </div>
+                  </div>
+  							</div>
+  						<% else %>
+  							<div class="poem-card" style="background-image: url('https://unsplash.it/200/200/?random')">
+                </div>
+  						<% end %>
+  					<% end %>
+  				<% end %>
+  			</div>
+  		</div>
+
+
+
+  	</div>
+  	<!-- end of row -->
+  </div>
+  <!-- end of container -->
+</div>
+
+
+
+
+

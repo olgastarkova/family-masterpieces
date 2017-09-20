@@ -1,58 +1,41 @@
-
-// slider ON-OFF button, source: https://proto.io/freebies/onoff/
-.onoffswitch {
-    position: relative; width: 71px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-}
-.onoffswitch-checkbox {
-    display: none;
-}
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    height: 32px; padding: 0; line-height: 32px;
-    border: 2px solid #E3E3E3; border-radius: 32px;
-    background-color: #DBD8D8;
-    transition: background-color 0.3s ease-in;
-}
-.onoffswitch-label:before {
-    content: "";
-    display: block; width: 32px; margin: 0px;
-    background: #FFFFFF;
-    position: absolute; top: 0; bottom: 0;
-    right: 37px;
-    border: 2px solid #E3E3E3; border-radius: 32px;
-    transition: all 0.3s ease-in 0s;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #3478C7;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-   border-color: #3478C7;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    right: 0px;
+.btn {
+   text-decoration: none; 
 }
 
 
+.btn-lg {
+  text-align: center;
+  padding: 20px 15px;
+  margin-bottom: 20px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 300px;
 
-.btn-home {
-    text-align: center;
-    height: 70px;
-    padding: 18px 40px;
-    margin: 5px;
-    color: white;
-    border: 1px solid white;
-    border-radius: 40px;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    font-weight: 100;
-
-    &:hover {
-       background-color: white;
-       color: black;
-       text-decoration: none;
-       transition: background 0.3s ease;
-       font-weight: 300;
+  &:hover {
+      text-decoration: none;
+      transition: background 0.3s ease;
+      border-width: 3px;
+      font-weight: 700;
     }
+
+  &.red {
+    color: $brand-color;
+    border-color: $brand-color;
+  }
+
+
+  &.brown {
+    color: $brand-choco;
+    border-color: $brand-choco;
+  }
+
+
+
+
+
+
 }

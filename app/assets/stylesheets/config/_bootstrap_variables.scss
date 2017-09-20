@@ -1,25 +1,35 @@
-/* -------------------------------------
- * Bootstrap sass variable
- * (see http://getbootstrap.com/customize/#less-variables)
- * ------------------------------------- */
+// Body
+$font-family-sans-serif:  	'Open Sans', sans-serif;
+$font-size-base: 			16px;
+$text-color: 				$gray;
+$body-bg:                 	white;
 
-// General style
-$font-family-sans-serif:  $base-font;
-$body-bg:                 white;
-$font-size-base:          $base-size;
-$line-height-base:        $base-height;
-$headings-font-family:    $header-font;
 
-// Semantic color scheme
-// => http://getbootstrap.com/customize/#colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
-$brand-success:   $green;
-$brand-info:      $yellow;
-$brand-danger:    $red;
-$brand-warning:   $orange;
+// Headings
+$headings-font-family:    	'Open Sans', sans-serif;
+$font-size-h1:				60px;
+$font-size-h2:				36px;
+$font-size-h3:				29px;
+$font-size-h4:				22px;
+$font-size-h5:				17px;
+$font-size-h6:				15px;
+$headings-font-weight:		700;
 
-// Buttons / inputs radius
-$border-radius-base:  2px;
-$border-radius-large: 2px;
-$border-radius-small: 2px;
+
+// Links
+$link-color: 				$green;
+$link-hover-color: 			#da552f;
+$link-hover-decoration: 	none;
+
+
+// Messages
+$brand-success:   			$green;
+$brand-info:      			$yellow;
+$brand-danger:    			$red;
+$brand-warning:   			$orange;
+
+
+// Buttons & inputs' radius
+$border-radius-base:  1px;
+$border-radius-large: 1px;
+$border-radius-small: 1px;
