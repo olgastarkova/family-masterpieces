@@ -3,29 +3,32 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <div class="white-sheet">
-          <div class="poem-info">
-            <div class="poem-date">
-              <p> <%= @poem.year.to_formatted_s(:long_ordinal) %> </p>
+          <% if policy(@poem).show? %>
+            <div class="poem-info">
+              <div class="poem-date">
+                <p> <%= @poem.year.to_formatted_s(:long_ordinal) %> </p>
+              </div>
+              <div class="poem-description">
+                <h2><%= @poem.title %></h2>
+                <p>Посвящается:</p>
+                <p><%= @poem.dedicated_to %></p>
+              </div>
+              <div class="poem-author-pic">
+                <%= image_tag 'http://placehold.it/50x50', class: "avatar-large avatar-circle" %>
+              </div>
             </div>
-            <div class="poem-description">
-              <h2><%= @poem.title %></h2>
-              <p>Посвящается:</p>
-              <p><%= @poem.dedicated_to %></p>
+            <div class="poem-content">
+              <p>
+                <%= simple_format(@poem.content) %>
+              </p>
             </div>
-            <div class="poem-author-pic">
-              <%= image_tag 'http://placehold.it/50x50', class: "avatar-large avatar-circle" %>
+            <div class="poem-navigation">
+            <!-- add navigation links here -->
             </div>
-          </div>
-          <div class="poem-content">
-            <p>
-              <%= simple_format(@poem.content) %>
-            </p>
-          </div>
-          <div class="poem-navigation">
-          <!-- add navigation links here -->
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+

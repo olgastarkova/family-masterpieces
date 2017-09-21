@@ -15,13 +15,13 @@
   					<%= link_to poem_path(poem) do %>
   						<% if poem.cover%>
   							<div class="poem-card" style="background-image: url('<%= cl_image_path poem.cover, height: 300, width: 300, crop: :fill %>')">
-                  				<div class="poem-card-banner">
-                    				<%= image_tag 'http://placehold.it/50x50', class: "avatar-large" %>
-                    				<div class="poem-flex-text">
-				                      <h3><%= poem.title %></h3>
-				                      <p><%= poem.year.year %></p>
-				                    </div>
-                  				</div>
+          				<div class="poem-card-banner">
+            				<%= image_tag 'http://placehold.it/50x50', class: "avatar-large" %>
+            				<div class="poem-flex-text">
+                      <h3><%= poem.title %></h3>
+                      <p><%= poem.year.year %></p>
+                    </div>
+          				</div>
   							</div>
   						<% else %>
   							<div class="poem-card" style="background-image: url('https://unsplash.it/200/200/?random')">
@@ -36,4 +36,5 @@
   </div>
   <!-- end of container -->
 </div>
+
 

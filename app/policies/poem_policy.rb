@@ -5,12 +5,21 @@ class PoemPolicy < ApplicationPolicy
     end
   end
 
-  def create?
-    return true
+  def show?
+  	true  # Anyone can view a poem
   end
 
-  def edit?
-    return true
+  def create?
+    true # Anyone can create a restaurant --> NEED TO CHANGE TO AUTHOR=TRUE
+  end
+
+  def update?
+  	true
+    # record.user == user
+  end
+
+  def destroy?
+  	record.user == user # Only poem creator can delete it
   end
 
 end
