@@ -2,4 +2,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
-//= require_tree .
+//= require_tree ./app
+
+

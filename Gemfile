@@ -12,6 +12,8 @@ gem 'pg_search'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.0'
 gem "pundit"
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'sass-rails'
 gem 'jquery-rails'
