@@ -14,13 +14,17 @@ class PoemPolicy < ApplicationPolicy
   end
 
   def update?
-  	true
-    # record.user == user
+  	is_user_owner_or_admin?
   end
 
   def destroy?
-  	record.user == user # Only poem creator can delete it
+  	is_user_owner_or_admin?
   end
 
-end
 
+  private
+
+  def is_user_owner_or_admin?
+    record.user == user || user.admin?
+  end
+end
