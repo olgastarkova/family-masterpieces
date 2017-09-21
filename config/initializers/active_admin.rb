@@ -3,18 +3,6 @@ def authenticate_admin!
   redirect_to new_user_session_path unless current_user && current_user.admin
 end
 
-# # Edit those four lines, to reuse existing `User` model.
-# ActiveAdmin.setup do |config|
-#   # [...]
-#   config.authentication_method = :authenticate_admin!
-#   # [...]
-#   config.current_user_method = :current_user
-#   # [...]
-#   config.logout_link_path = :destroy_user_session_path
-#   # [...]
-#   config.logout_link_method = :delete
-# end
-
 
 
 ActiveAdmin.setup do |config|
@@ -74,6 +62,7 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # within the application controller.
   # config.authentication_method = :authenticate_admin_user!
+  config.authentication_method = :authenticate_admin!
 
   # == User Authorization
   #
@@ -97,6 +86,8 @@ ActiveAdmin.setup do |config|
   # doesn't have access to Dashboard, he'll end up in a redirect loop.
   # Method provided here should be defined in application_controller.rb.
   # config.on_unauthorized_access = :access_denied
+
+  config.current_user_method = :current_user
 
   # == Current User
   #
@@ -124,6 +115,7 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.logout_link_method = :get
+  config.logout_link_method = :delete
 
   # == Root
   #
