@@ -9,5 +9,9 @@ class PoemPolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    return true
+  end
+
 end
 
