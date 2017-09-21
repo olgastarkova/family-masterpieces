@@ -10,7 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'pg_search'
 gem 'cloudinary'
-gem 'carrierwave'
+gem 'carrierwave', '~> 1.0'
 
 gem 'sass-rails'
 gem 'jquery-rails'

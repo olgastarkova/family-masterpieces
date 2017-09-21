@@ -212,7 +212,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-datepicker-rails
   bootstrap-sass
-  carrierwave
+  carrierwave (~> 1.0)
   cloudinary
   devise
   figaro
