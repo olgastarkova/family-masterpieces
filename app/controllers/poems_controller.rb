@@ -67,7 +67,7 @@ class PoemsController < ApplicationController
 	end
 
 	def poem_params
-		params.require(:poem).permit(:title, :content, :user_id, :year, :author, :dedicated_to, :cover, :cover_cache)
+		params.require(:poem).permit(:title, :content, :user_id, :year, :dedicated_to, :cover, :cover_cache)
 	end
 
 end
