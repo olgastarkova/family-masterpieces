@@ -5,7 +5,7 @@
         <div class="white-sheet">
           <div class="poem-info">
             <div class="poem-date">
-              <p> <%= Date.today.to_formatted_s(:long_ordinal) %> </p>
+              <p> <%= @poem.year.to_formatted_s(:long_ordinal) %> </p>
             </div>
             <div class="poem-description">
               <h2><%= @poem.title %></h2>
@@ -13,7 +13,7 @@
               <p><%= @poem.dedicated_to %></p>
             </div>
             <div class="poem-author-pic">
-              <%= image_tag 'http://placehold.it/50x50', class: "avatar-large" %>
+              <%= image_tag 'http://placehold.it/50x50', class: "avatar-large avatar-circle" %>
             </div>
           </div>
           <div class="poem-content">

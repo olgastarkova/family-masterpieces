@@ -23,3 +23,15 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+
+.space-before {
+	margin-top: 25px;
+}
+
+
+@media (min-width: 1150px) {
+	.wrapper {
+		margin-top: 50px;
+	}
+}

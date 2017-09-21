@@ -1,0 +1,15 @@
+.portrait {
+	width: 70%;
+	border: 1px solid $light-grey;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	.space {
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+}
+
+
