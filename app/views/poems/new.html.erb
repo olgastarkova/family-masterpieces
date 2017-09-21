@@ -1,2 +1,4 @@
 <h1 class="text-center">Ура! Новое творение</h1>
-<%= render "form" %>
+<% if policy(Poem).create? %>
+  <%= render "form" %>
+<% end %>

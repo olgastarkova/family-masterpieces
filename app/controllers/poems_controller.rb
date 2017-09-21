@@ -4,6 +4,7 @@ class PoemsController < ApplicationController
 
 	def index
 		@poem = Poem.new
+		@poems = policy_scope(Poem).order(created_at: :desc)
 		@users = User.where(author: true)
 	  	if params[:query]
 	  		@poems = Poem.search_by_title_and_content(params[:query])
@@ -19,12 +20,13 @@ class PoemsController < ApplicationController
 
 	def new
 		@poem = Poem.new
+		authorize(@poem)
 		@users = User.where(author: true)
 	end
 
 	def create
 		@poem = Poem.new(poem_params)
-		# @poem.user = current_user
+		authorize @poem
 		if @poem.save
 			redirect_to poem_path(@poem)
 		else
@@ -59,10 +61,11 @@ class PoemsController < ApplicationController
 
 	def set_poem
 		@poem = Poem.find(params[:id])
+		authorize @poem
 	end
 
 	def poem_params
-		params.require(:poem).permit(:title, :content, :user, :year, :dedicated_to, :cover, :cover_cache)
+		params.require(:poem).permit(:title, :content, :user_id, :year, :dedicated_to, :cover, :cover_cache)
 	end
 
 end
