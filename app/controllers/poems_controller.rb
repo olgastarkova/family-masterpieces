@@ -36,10 +36,12 @@ class PoemsController < ApplicationController
 
 	def edit
 		@users = User.where(author: true)	
+		authorize @poem
 	end
 
 	def update
     	@poem.update(poem_params)
+    	authorize @poem
 	end
 
 	def destroy
