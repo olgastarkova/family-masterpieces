@@ -52,6 +52,14 @@ li {
 }
 
 // SECTION 2: LIST OF POEMS
+h3.customized {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	color: $brand-color;
+	font-weight: 300;
+	letter-spacing: 1px;
+	font-size: 40px;
+}
 
 
 .poems-search-results {
@@ -61,30 +69,30 @@ li {
 
 
 .poem-card {
+	display: flex;
+  justify-content: space-around;
+  align-items: center;
 	height: 300px;
 	width: 300px;
+	// margin: auto;
 	opacity: 0.6;
-  position: relative;
-  margin-right: 50px;
-  margin-bottom: 50px;
+  margin: 10px;
+  border: 1px solid $light-grey;
+
+  &:hover {
+  	opacity: 1;
+  	border: 2px solid $brand-color;
+  }
 }
 
 .poem-card-banner {
-  width: 300px;
-  background-color: $blue;
-	opacity: 0.9;
+  width: 90%;
 	color: white;
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  bottom: 0px;
-}
-
-.poem-flex-text {
-  flex: 0 0 60%;
+  letter-spacing: 1px;
+  
   h3 {
-    font-size: 18px;
+    font-size: 24px;
+    margin-bottom: 8px;
   }
   p {
     font-size: 14px;

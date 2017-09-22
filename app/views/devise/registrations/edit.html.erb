@@ -15,7 +15,7 @@
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
-            <%= f.input :password, label: "Пароль", autocomplete: "off", hint: "Оставьте это поле пустым, если не пароль не требует изменений", required: false %>
+            <%= f.input :password, label: "Пароль", autocomplete: "off", hint: "Оставьте это поле пустым, если пароль не требует изменений", required: false %>
             <%= f.input :password_confirmation, label: "Подтверждение пароля", required: false %>
             <%= f.input :first_name, label: "Имя", required: true %>
             <%= f.input :last_name, label: "Фамилия", required: true %>

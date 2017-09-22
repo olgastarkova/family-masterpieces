@@ -1,0 +1,36 @@
+<div class="search_bar">
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-xs-12 col-md-3">
+  			<%= simple_form_for @poem, :url => poems_path,  :method => :get, remote: true do |f| %>
+			  <%= f.input :year, collection: 2004..2017,   as: :check_boxes %>
+			  <%= f.submit "Filter", class: "btn btn-primary" %>
+			<% end %>
+
+  		</div>
+  		<div class="col-xs-12 col-md-9">
+  			<h3 class="customized">Не дышите на шедевры ...</h3>
+  			<div class="poems-search-results">
+  				<% @poems.each do |poem| %>
+  					<%= link_to poem_path(poem) do %>
+  						<% if poem.cover%>
+  							<div class="poem-card" style="background-image: url('<%= cl_image_path poem.cover, height: 300, width: 300, crop: :fill %>')">
+          				<div class="poem-card-banner text-center">
+                    <h3><%= poem.title %></h3>
+                    <p><%= poem.year.year %></p>
+          				</div>
+  							</div>
+  						<% else %>
+  							<div class="poem-card" style="background-image: url('https://unsplash.it/200/200/?random')">
+                			</div>
+  						<% end %>
+  					<% end %>
+  				<% end %>
+  			</div>
+  		</div>
+  	</div>
+  	<!-- end of row -->
+  </div>
+  <!-- end of container -->
+</div>
+
