@@ -5,22 +5,19 @@
   			<h3 class="customized">Не дышите на шедевры ...</h3>
   			<div class="poems-search-results">
   				<% @poems.each do |poem| %>
-<!--             <div class="col-xs-12 col-sm-6 col-md-4"> -->
-              <%= link_to poem_path(poem) do %>
-                <% if poem.cover%>
-                  <div class="poem-card" style="background-image: url('<%= cl_image_path poem.cover, height: 300, width: 300, crop: :fill %>')">
-                    <div class="poem-card-banner text-center">
-                      <h3><%= poem.title %></h3>
-                      <p><%= poem.year.year %></p>
-                    </div>
+            <%= link_to poem_path(poem) do %>
+              <% if poem.cover%>
+                <div class="poem-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path poem.cover, height: 300, width: 300, crop: :fill %>')">
+                  <div class="poem-card-banner text-center">
+                    <h3><%= poem.title %></h3>
+                    <p><%= poem.year.year %></p>
                   </div>
-                <% else %>
-                  <div class="poem-card" style="background-image: url('https://unsplash.it/200/200/?random')">
-                        </div>
-                <% end %>
+                </div>
+              <% else %>
+                <div class="poem-card" style="background-image: url('https://unsplash.it/200/200/?random')">
+                      </div>
               <% end %>
-<!--             </div> -->
-  
+            <% end %>
   				<% end %>
   			</div>
   		</div>

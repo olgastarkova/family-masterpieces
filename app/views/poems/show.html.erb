@@ -1,20 +1,28 @@
 <div class="wrapper-toys">
+  <%= link_to poems_path do %>
+    <i class="fa fa-angle-double-left solo" aria-hidden="true"></i>
+  <% end %>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <div class="white-sheet">
           <% if policy(@poem).show? %>
+            <div class="poem-photo">
+              <%= cl_image_tag @poem.cover, width: 680, height: 400, crop: :fill %>
+            </div>
             <div class="poem-info">
               <div class="poem-date">
                 <p> <%= @poem.year.to_formatted_s(:long_ordinal) %> </p>
               </div>
               <div class="poem-description">
                 <h2><%= @poem.title %></h2>
-                <p>Посвящается:</p>
+                <p class="print">Посвящается:</p>
                 <p><%= @poem.dedicated_to %></p>
               </div>
               <div class="poem-author-pic hidden-xs">
-                <%= image_tag 'http://placehold.it/50x50', class: "avatar-large avatar-circle" %>
+                <%= image_tag 'http://placehold.it/80x80', class: "avatar-large avatar-circle text-center" %>
+                <p class="print">Автор:</p>
+                <p><%= @poem.user.nickname %></p>
               </div>
             </div>
             <div class="poem-content">
@@ -23,7 +31,9 @@
               </p>
             </div>
             <div class="poem-navigation">
-            <!-- add navigation links here -->
+              <%= link_to poems_path do %>
+                <span><i class="fa fa-angle-double-left" aria-hidden="true"></i> Вернуться к списку стихов</span>
+              <% end %>
             </div>
           <% end %>
         </div>

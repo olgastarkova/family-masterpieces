@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4 custom-form">
 			<%= simple_form_for @poem  do |f| %>
 				<%= f.input :title, placeholder: "Чудосрунт", label: "Название" %>
 				<%= f.input :content, label: "Текст стихотворения" %>
@@ -10,7 +10,7 @@
 				<%= f.input :dedicated_to, collection: Poem::PEOPLE, prompt: "Выбрать из списка", label: "Посвящается" %>
         		<%= f.input :cover, label: "Изображение для обложки" %>
         		<%= f.input :cover_cache, as: :hidden %>
-				<%= f.submit "Добавить", class: "btn btn-primary" %>
+				<%= f.submit "Добавить", class: "btn btn-lg red custom" %>
 			<% end %>
 		</div>
 	</div>
