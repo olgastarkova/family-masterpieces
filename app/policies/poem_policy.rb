@@ -10,7 +10,9 @@ class PoemPolicy < ApplicationPolicy
   end
 
   def create?
-    true # Anyone can create a restaurant --> NEED TO CHANGE TO AUTHOR=TRUE
+    if user.author == true
+      true # Only users with author status true can create poems
+    end
   end
 
   def update?

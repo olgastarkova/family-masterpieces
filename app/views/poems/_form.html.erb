@@ -2,8 +2,8 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-4 col-sm-offset-4 custom-form">
 			<%= simple_form_for @poem  do |f| %>
-				<%= f.input :title, placeholder: "Чудосрунт", label: "Название" %>
-				<%= f.input :content, label: "Текст стихотворения" %>
+				<%= f.input :title, label: "Название" %>
+				<%= f.input :content, label: "Текст стихотворения", :input_html => {:rows => 10} %>
 				<%= f.association :user, collection: @users, include_blank: true, label: "Автор" %>
 
 				<%= f.input :year, as: :string, input_html: {id: "poem_created"}, label: "Год" %>

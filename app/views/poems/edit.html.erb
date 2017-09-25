@@ -1,4 +1,4 @@
-<h1 class="text-center">Внести изменения</h1>
-<% if policy(Poem).edit? %>
+<h1 class="custom text-center">Внести изменения</h1>
+<% if policy(@poem).edit? %>
   <%= render "form" %>
 <% end %>

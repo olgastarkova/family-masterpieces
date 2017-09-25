@@ -1,6 +1,6 @@
 class PoemsController < ApplicationController
 	before_action :set_poem, only: [:show, :edit, :update, :destroy]
-	skip_before_action :authenticate_user!, only: [ :index ]
+	skip_before_action :authenticate_user!, only: [ :index, :show ]
 
 	def index
 		@poem = Poem.new
@@ -28,21 +28,25 @@ class PoemsController < ApplicationController
 		@poem = Poem.new(poem_params)
 		authorize @poem
 		if @poem.save
-			redirect_to poem_path(@poem)
+			redirect_to poem_path(@poem), notice: 'Ваш шедевр был успешно добавлен!'
 		else
 			render "poems/new"
 		end
 	end
 
 	def edit
-		@users = User.where(author: true)	
-		authorize @poem
 	end
 
+	
 	def update
-    	@poem.update(poem_params)
-    	authorize @poem
+    	if @poem.update(poem_params)
+    		redirect_to @poem, notice: 'Ваш шедевр был успешно изменён!'
+    	else
+    		render :edit
+    	end
 	end
+
+  
 
 	def destroy
     	@poem.destroy
