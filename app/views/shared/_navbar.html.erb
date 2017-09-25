@@ -18,7 +18,7 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 <!--       <div class="navbar-wagon-item navbar-wagon-link"> -->
-        <p class="navbar-wagon-hello">Здравствуй, <%= current_user.nickname %></p>
+        <p class="navbar-wagon-hello">Здравствуй, <%= current_user.nickname ? current_user.nickname : current_user.email %></p>
 <!--       </div> -->
         
 

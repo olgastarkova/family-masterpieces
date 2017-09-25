@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @poems = Poem.all
+    if current_user.admin == true
+    	@poems = Poem.all
+    else
+    	@poems = Poem.where(user: current_user)
+    end
   end
 end
