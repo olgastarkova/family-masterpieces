@@ -20,8 +20,7 @@
             <%= f.input :first_name, label: "Имя", required: true %>
             <%= f.input :last_name, label: "Фамилия", required: true %>
             <%= f.input :nickname, label: "Имя пользователя", required: true %>
-            <%= f.input :description, label: "О себе" %>
-            <%= f.input :author, label: "Автор?", required: true %>
+            <%= f.input :description, label: "О себе", :input_html => {:rows => 6} %>
             <%= f.input :current_password, label: "Введите текущий пароль, чтобы подтвердить изменения", required: true %>
           </div>
 
