@@ -4,7 +4,7 @@
 			<%= simple_form_for @poem  do |f| %>
 				<%= f.input :title, label: "Название" %>
 				<%= f.input :content, label: "Текст стихотворения", :input_html => {:rows => 10} %>
-				<%= f.association :user, collection: @users, include_blank: true, label: "Автор" %>
+				<%= f.association :user, collection: @users, prompt: "Выбрать из списка", label: "Автор" %>
 
 				<%= f.input :year, as: :string, input_html: {id: "poem_created"}, label: "Год" %>
 				<%= f.input :dedicated_to, collection: Poem::PEOPLE, prompt: "Выбрать из списка", label: "Посвящается" %>
