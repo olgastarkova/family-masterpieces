@@ -6,7 +6,16 @@ class Poem < ApplicationRecord
 	belongs_to :user
 	validates :title, :content, :year, :user_id, presence: true
 	validates :dedicated_to, inclusion: {in: PEOPLE}
-  mount_uploader :cover, CoverUploader
+	mount_uploader :cover, CoverUploader
+
+	include AlgoliaSearch
+
+  algoliasearch do
+    attribute :user, :dedicated_to, :content, :title
+    searchableAttributes ['title', 'content', 'dedicated_to', 'user']
+    attributesForFaceting [:dedicated_to]
+  end
+
 end
 
 
