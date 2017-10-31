@@ -11,9 +11,9 @@ class Poem < ApplicationRecord
 	include AlgoliaSearch
 
   algoliasearch do
-    attribute :user, :dedicated_to, :content, :title
-    searchableAttributes ['title', 'content', 'dedicated_to', 'user']
-    attributesForFaceting [:dedicated_to]
+    attribute :title, :content, :user, :dedicated_to, :cover, :year
+    searchableAttributes ['title', 'content']
+    attributesForFaceting [:dedicated_to, :user]
   end
 
 end

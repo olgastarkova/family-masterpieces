@@ -2,8 +2,10 @@
   <div class="container-fluid">
   	<div class="row">
   		<div class="col-xs-12 col-md-10 col-md-offset-2">
+        <input id="searchBox" />
   			<h3 class="customized">Не дышите на шедевры ...</h3>
   			<div class="poems-search-results">
+          <div id="poems"></div>
   				<% @poems.each do |poem| %>
             <%= link_to poem_path(poem) do %>
               <% if poem.cover%>
@@ -19,6 +21,11 @@
               <% end %>
             <% end %>
   				<% end %>
+<!-- TEST ALGOLIA -->
+          <div id="pagination">
+            <!-- Pagination widget will appear here -->
+          </div>
+<!-- End Test Algolia -->
   			</div>
   		</div>
   	</div>
@@ -28,3 +35,54 @@
 </div>
 
 
+
+
+<script>
+    const search = instantsearch({
+    appId: '5AS663GRYM',
+    apiKey: 'f175da6e608ba5154f17b4fdaf8d056b',
+    indexName: 'Poem',
+    urlSync: true
+  });
+
+
+  search.addWidget(instantsearch.widgets.hits({
+    container: document.querySelector('#poems'),
+    templates: {
+      item: '{{{_highlightResult.title.value}}}'
+    },
+  }));
+
+  search.addWidget(instantsearch.widgets.searchBox({
+    container: document.querySelector('#searchBox'),
+    placeholder: 'Найти стихотворение',
+  }));
+
+
+
+
+  // initialize pagination
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination',
+      maxPages: 5,
+      // default is to scroll to 'body', here we disable this behavior
+      scrollTo: false
+    })
+  );
+
+
+
+  search.start();
+</script>
+
+
+<script>
+  helper.on('result', function(content) {
+    renderHits(content);
+  });
+
+  function renderHits(content) {
+    $('#container').html(JSON.stringify(content, null, 2));
+  }
+</script>
