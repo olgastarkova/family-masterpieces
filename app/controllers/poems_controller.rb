@@ -5,7 +5,7 @@ class PoemsController < ApplicationController
 		@users = User.where(author: true)
 	  	if params[:query]
 	  		@poems = Poem.search_by_title_and_content(params[:query])
-	  	else
+      else
 	  		@poems = Poem.all
 	  	end
 	end
